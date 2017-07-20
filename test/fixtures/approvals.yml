@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  status: 1
+  approver_id: 1
+  approvable_id: 1
+  approvable_type=string: MyString
+
+two:
+  status: 1
+  approver_id: 1
+  approvable_id: 1
+  approvable_type=string: MyString

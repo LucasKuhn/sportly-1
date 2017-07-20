@@ -1,0 +1,14 @@
+<div id="create-team-form">
+  <%= form_for @team do |f| %>
+  <p>
+    <%= f.label :name, 'team name:' %>
+    <%= f.text_field :name %>
+  </p>
+  <%= f.hidden_field :captain_id, value: 5 %>
+  <%= f.hidden_field :league_id, value: League.one_id %>
+  <%= f.hidden_field :league_id, value: League.one_id %>
+  <p>
+    <%= f.submit 'create' %>
+  </p>
+  <% end %>
+</div>

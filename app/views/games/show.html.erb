@@ -1,0 +1,34 @@
+<% @user = User.find(session[:id])%>
+
+<h1><%= @game.team1.name %> vs <%= @game.team2.name %></h1>
+
+<p>⏰ <%= @game.date.strftime("%B %d, %Y - %l:%M %p") %></p>
+<p>📌 <%= @game.location %>  </p>
+
+<div class="team-1">
+  <h1> Team 1: <%= link_to "#{@game.team1.name}", team_path(@game.team1.id) %> </h1>
+  <%= render 'team1confirmations/players' %>
+</div>
+
+<% if !user_confirmed? %>
+  <% if primary_for_team1? %>
+    <%= render 'team1confirmations/jointeam' %>
+  <% end %>
+  <% if backup_for_team1? && !primary_for_team2? %>
+    <%= render 'team1confirmations/joinasbackup' %>
+  <% end %>
+<% end %>
+
+<div class="team-2">
+  <h1> Team 2: <%= link_to "#{@game.team2.name}", team_path(@game.team2.id) %> </h1>
+  <%= render 'team2confirmations/players' %>
+</div>
+
+<% if !user_confirmed? %>
+  <% if primary_for_team2? %>
+    <%= render 'team2confirmations/jointeam' %>
+  <% end %>
+  <% if backup_for_team2? && !primary_for_team1? %>
+    <%= render 'team2confirmations/joinasbackup' %>
+  <% end %>
+<% end %>

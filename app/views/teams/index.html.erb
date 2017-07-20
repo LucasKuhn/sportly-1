@@ -1,0 +1,23 @@
+
+<div>
+<h1>Teams</h1>
+  <% @teams.each do |team| %>
+    <div class="centered">
+    <tr>
+      <h4><td><%= link_to team.name, team_path(team) %></td></h4><br>
+
+      <td>Team Captain:<%= team.team_captain.first_name + " " + team.team_captain.last_name %></td><br>
+      <td>Players:<%= team.primary_players.count %></td><br>
+
+      <% if current_user ==  team.team_captain %>
+        <td><%= link_to 'Edit', edit_team_path(team) %></td>
+        <td><%= link_to 'Destroy', team_path(team),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td><br>
+        <% end %>
+    </tr>
+
+    </div>
+    <br>
+  <% end %>
+</div>

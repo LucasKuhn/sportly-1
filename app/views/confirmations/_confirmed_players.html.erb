@@ -1,0 +1,6 @@
+<% @confirmations = Team2confirmation.all || @confirmations = Team1confirmation.all %>
+<ul>
+  <% @confirmations.each do |confirmation| %>
+    <li><%= confirmation.user.first_name %></li>
+  <% end %>
+</ul>

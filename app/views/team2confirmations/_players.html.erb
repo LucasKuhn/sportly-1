@@ -1,0 +1,7 @@
+<h3>Confirmed Players:</h3>
+<% @confirmations = @game.team2confirmations %>
+<ul>
+  <% @confirmations.each do |confirmation| %>
+    <li><%= confirmation.user.first_name %></li>
+  <% end %>
+</ul>

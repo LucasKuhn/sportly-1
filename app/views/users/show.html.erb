@@ -1,0 +1,14 @@
+<div class="main">
+  <h1 id="left">Welcome, <%= current_user.first_name %></h1>
+  <% if current_user.primary_team_id != nil %>
+    <h2> Next game you signed up: </h2>
+    <% @next_games = next_confirmed_games(current_user) %>
+    <%= render 'games/nextgames' %>
+  <% end %>
+
+  <% if current_user.primary_team_id == nil %>
+    <p> Choose your primary team </p>
+    <%= render 'teams/teamselection' %>
+  <% end %>
+
+</div>

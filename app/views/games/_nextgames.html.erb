@@ -1,0 +1,5 @@
+<% @next_games.each do |game| %>
+  <p>
+  <%= game.date.strftime('%a %d %b') %> - <%= link_to "#{game.team1.name} vs #{game.team2.name}", game_path(game.id) %>
+  </p>
+<% end %>

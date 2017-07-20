@@ -1,0 +1,10 @@
+<div  class="centered" >
+  <% @teams = Team.all %>
+  <% @teams.each do |team| %>
+    <div>
+       <h3><%= link_to team.name, team_path(team) %></h3>
+        <%= button_to "JOIN THIS TEAM", edit_user_path(@user.id), params: {} %>
+    </div>
+    <br>
+  <% end %>
+</div>

@@ -1,0 +1,40 @@
+<div class="main">
+  <div class="leagues">
+    <h1 id="left">LEAGUES</h1>
+    <div class="leagues_list1">
+      <p>Basketball</p>
+      <p>Baseball</p>
+      <p>Bowling</p>
+      <p>Dodgeball</p>
+      <p>Pokemon Go</p>
+      <p>Tennis</p>
+    </div>
+    <div class="leagues_list2">
+      <p><a href="/games">Soccer</a></p>
+      <p>Baseball</p>
+      <p>Cricket</p>
+      <p>Chess</p>
+      <p>Table Tennis</p>
+      <p>More coming soon..</p>
+    </div>
+  </div>
+
+  <div class="log_in">
+    <p id="right">Newbie? <a href="/users/new"> Register Here</a></p>
+  <% if !logged_in? %>
+    <form action="/sessions/login" method="GET">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input type="text" placeholder="Email" name="email" required>
+
+      <input type="password" placeholder="Password" name="password" required>
+
+      <div class="clearfix">
+      <button class="btn waves-effect waves-light" type="submit" name="action">Log in</button>
+       <!--  <button type="submit" class="signupbtn">Log In</button> -->
+      </div>
+    </form>
+  <% end %>
+  </div>
+</div>
+
+

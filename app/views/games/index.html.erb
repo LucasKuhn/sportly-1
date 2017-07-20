@@ -1,0 +1,12 @@
+<div style="text-align: center;">
+  <h1> Next Games </h1>
+  <% Game.where("date >= ?", Time.now).order(:date).each do |game| %>
+    <li style="display: block; ">
+      <h3 style="display: inline"> <%= game.date.strftime("%B %d, %Y") %> </h3><br>
+      <h2 style="display: inline">
+        <%= link_to "#{game.team1.name} vs #{game.team2.name}", game_path(game.id) %>
+      </h2>
+      <br><br>
+    </li>
+  <% end %>
+</div>

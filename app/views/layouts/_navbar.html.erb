@@ -1,0 +1,22 @@
+<ul class="navbar">
+  <li class="home_logo"><a href="/"><div class="icon"><%= image_tag("sportly_icon.jpg") %></div></a>
+
+  </li>
+  <% if logged_in? %>
+    <li id="slide_to_right"><a href="/sessions/logout">Logout</a></li>
+
+    <% if current_user.secondary_team != nil %>
+      <li id="slide_to_right"><a href="/teams/<%= current_user.secondary_team.id %>">Secondary Team: <%= current_user.secondary_team.name %></a></li>
+    <% end %>
+
+    <% if current_user.primary_team != nil %>
+      <li id="slide_to_right"><a href="/teams/<%= current_user.primary_team.id %>">Primary Team: <%= current_user.primary_team.name %></a></li>
+    <% end %>
+
+    <% if captain_for_team1? %>
+      <li id="slide_to_right"><a href="/games/new">Create a game for <%= current_user.primary_team.name %></a></li>
+    <% end %>
+
+    <li id="slide_to_right"><a href="/users/<%= current_user.id %>">Logged in as <%= current_user.first_name %></a></li>
+  <% end %>
+</ul>
