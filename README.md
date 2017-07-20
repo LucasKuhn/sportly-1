@@ -1,5 +1,5 @@
 # SPORTLY
-<img src="sportly/Sportly_login.png"
+<img src="https://github.com/papistan/sportly/blob/master/Sportly_login.png"
  alt="Sportly login" title="Sportly Login" align="right" />
 <img src="http://build.or.at/wp-content/uploads/2013/04/sportly_neu.jpg"
  alt="Sportly logo" title="Sportly" align="right" />
