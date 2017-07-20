@@ -1,6 +1,7 @@
-# SPORTLY
+
 <img src="https://github.com/papistan/sportly/blob/master/Sportly_login.png"
  alt="Sportly login" title="Sportly Login" align="right" />
+# SPORTLY
 Sportly is a platform for managing sports leagues, matches and player rosters. 
 
 # Tech Stack
